@@ -75,7 +75,6 @@ class daMegaGoomba_c : public dEn_c {
 
 	int tryHandleJumpedOn(ActivePhysics *apThis, ActivePhysics *apOther);
 
-	void spriteCollision(ActivePhysics *apThis, ActivePhysics *apOther);
 	void playerCollision(ActivePhysics *apThis, ActivePhysics *apOther);
 
 	bool collisionCat1_Fireball_E_Explosion(ActivePhysics *apThis, ActivePhysics *apOther);
@@ -222,18 +221,6 @@ bool daMegaGoomba_c::takeHit(char count) {
 #define DEACTIVATE	0
 
 extern "C" void *EN_LandbarrelPlayerCollision(dEn_c* t, ActivePhysics *apThis, ActivePhysics *apOther);
-void daMegaGoomba_c::spriteCollision(ActivePhysics *apThis, ActivePhysics *apOther) {
-	//HE'S TOO BADASS TO STOP FOR SMALLER GOOMBAS
-	#if 0
-		float me = apThis->firstFloatArray[3];
-		if (((this->direction == 1) && (me > 0.0)) || ((this->direction == 0) && (me < 0.0))) {
-			dStateBase_c* state = this->acState.getCurrentState();
-			if (!state->isEqual(&StateID_Turn)) {
-				doStateChange(&StateID_Turn);
-			}
-		}
-	#endif
-}
 void daMegaGoomba_c::playerCollision(ActivePhysics *apThis, ActivePhysics *apOther) { 
 	if (apThis == &stalkAPhysics) {
 		dEn_c::playerCollision(apThis, apOther);
