@@ -1,0 +1,12 @@
+__pycache__
+_build
+build.ninja
+bin
+*.o
+*.o.d
+*/.vscode
+Source Code/tools
+Source Code/build
+Source Code/src/cache
+Riivolution Patch/save
+Riivolution Patch/riivolution/config

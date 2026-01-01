@@ -1,0 +1,1 @@
+python3 build_project_linux.py "nsmbwer#.xml"

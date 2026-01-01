@@ -1,0 +1,1 @@
+This patch for Reggie! Next is recommended for use with the newest version (4.9.0). Older versions (including the prebuilt ones) may have issues or fail to work completely.
