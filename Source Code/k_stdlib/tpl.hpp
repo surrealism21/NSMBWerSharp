@@ -1,5 +1,4 @@
-#ifndef TPL_H
-#define TPL_H 
+#pragma once
 #include <kamek.hpp>
 
 extern "C" {
@@ -33,5 +32,3 @@ void TPLBind(TPLPalette *palette);
 TPLImage *TPLGet(TPLPalette *palette, int index);
 
 }
-
-#endif /* TPL_H */

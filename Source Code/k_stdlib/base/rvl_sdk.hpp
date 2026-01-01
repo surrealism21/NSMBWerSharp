@@ -1,9 +1,6 @@
-#ifndef __KAMEK_BASE_RVL_SDK_H
-#define __KAMEK_BASE_RVL_SDK_H
+#pragma once
 
-#ifdef __cplusplus
 extern "C" {
-#endif
 
 /* OS Module */
 void OSReport(const char *format, ...);
@@ -95,8 +92,4 @@ void C_QUATSlerp(const Quaternion *sourceA, const Quaternion *sourceB, Quaternio
 
 // TODO: GX, CX, IOS ... and then of course NW4R
 
-#ifdef __cplusplus
 }
-#endif
-
-#endif

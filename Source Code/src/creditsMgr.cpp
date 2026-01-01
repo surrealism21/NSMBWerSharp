@@ -2,7 +2,7 @@
 #include <sfx.hpp>
 #include <dCourse.hpp>
 #include <stage.hpp>
-#include <playerAnim.hpp>
+#include <player.hpp>
 #include <newer.hpp>
 #include <utils.hpp>
 #include <profile.hpp>

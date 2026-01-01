@@ -1,5 +1,4 @@
-#ifndef __GX_H__
-#define __GX_H__
+#pragma once
 
 // Heavily modified by Treeki, to be mostly compatible
 // with the RVL_SDK GX functions
@@ -1164,9 +1163,7 @@
 
 #define GX_MAX_Z24						0x00ffffff
 
-#ifdef __cplusplus
-   extern "C" {
-#endif /* __cplusplus */
+extern "C" {
 
 typedef union _wgpipe
 {
@@ -5178,8 +5175,4 @@ volatile void* GXRedirectWriteGatherPipe(void *ptr);
                     (shininess)/2.0F, 0.0F,   \
                     1.0F-(shininess)/2.0F ))
 
-#ifdef __cplusplus
-   }
-#endif /* __cplusplus */
-
-#endif
+}

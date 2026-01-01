@@ -1,15 +1,12 @@
-#ifndef __KAMEK_PROFILE_H
-#define __KAMEK_PROFILE_H
+#pragma once
+#include <game.hpp>
+#include <profileid.hpp>
 
 #if defined(REGION_KW) || defined(REGION_C)
 	#define ORIGINAL_PROFILES 752
 #else
 	#define ORIGINAL_PROFILES 750
 #endif
-
-
-#include <game.hpp>
-#include <profileid.hpp>
 
 // typedef struct { f32 x, y, z, w; } Quaternion, *QuaternionPtr, Qtrn, *QtrnPtr;
 
@@ -61,6 +58,3 @@ extern "C" SpriteData sprites[];
 
 extern "C" Profile* originalProfiles[ORIGINAL_PROFILES];
 extern "C" Profile* profiles[];
-
-
-#endif

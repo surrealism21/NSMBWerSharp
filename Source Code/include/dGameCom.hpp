@@ -1,6 +1,4 @@
-#ifndef __DGAMECOM
-#define __DGAMECOM
-
+#pragma once
 #include <game.hpp>
 
 enum SCLanguage {
@@ -118,5 +116,3 @@ namespace dGameCom {
 	static u32 m_rnd;  // 0x8042A224
 	static u32 gameStop; // 0x8042A228
 };
-
-#endif

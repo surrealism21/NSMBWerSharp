@@ -1,6 +1,4 @@
-#ifndef __KAMEK_GAME_H
-#define __KAMEK_GAME_H
-
+#pragma once
 #include <common.hpp>
 #include <gx.hpp>
 #include <tpl.hpp>
@@ -3537,5 +3535,3 @@ public:
     dRes_c res;
     static dResMng_c* instance; // 0x8042a318
 };
-
-#endif

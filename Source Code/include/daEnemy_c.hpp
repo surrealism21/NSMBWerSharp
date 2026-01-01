@@ -1,6 +1,4 @@
-#ifndef __ENEMY_H
-#define __ENEMY_H
-
+#pragma once
 #include <common.hpp>
 #include <game.hpp>
 #include <g3dhax.hpp>
@@ -28,6 +26,3 @@ public:
 
 	//void setupBodyModel();			//FIXME
 };
-
-#endif
-

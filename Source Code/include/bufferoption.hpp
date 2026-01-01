@@ -1,5 +1,5 @@
-#ifndef BUFFEROPTION_H
-#define BUFFEROPTION_H 
+#pragma once
+
 enum BufferOption {
     BUFFER_RESTEXOBJ         = 0x00000001,
     BUFFER_RESTLUTOBJ        = 0x00000002,
@@ -29,4 +29,3 @@ enum BufferOption {
     ANM_VTX    = ANM_SHP,
     ANM_ALL    = ANM_MATCLR | ANM_TEXPAT | ANM_TEXSRT | ANM_VIS | ANM_VTX
 };
-#endif /* BUFFEROPTION_H */

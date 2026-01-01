@@ -1,6 +1,4 @@
-#ifndef __KAMEK_COURSE_H
-#define __KAMEK_COURSE_H
-
+#pragma once
 #include <common.hpp>
 
 struct BGDatObject_t {
@@ -164,5 +162,3 @@ struct Block14 {
 	short unk1;
 	short unk2;
 };
-
-#endif

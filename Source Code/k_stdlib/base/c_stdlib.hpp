@@ -1,9 +1,6 @@
-#ifndef __KAMEK_BASE_C_STDLIB_H
-#define __KAMEK_BASE_C_STDLIB_H
+#pragma once
 
-#ifdef __cplusplus
 extern "C" {
-#endif
 
 /* math.h */
 double acos(double);
@@ -80,8 +77,4 @@ size_t wcslen(const wchar_t *);
 wchar_t *wmemchr(const wchar_t, wchar_t, size_t);
 wchar_t *wmemcpy(wchar_t *, const wchar_t *, size_t);
 
-#ifdef __cplusplus
 }
-#endif
-
-#endif

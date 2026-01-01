@@ -1,5 +1,4 @@
-#ifndef MSGBOX_H
-#define MSGBOX_H 
+#pragma once
 #include <common.hpp>
 #include <game.hpp>
 
@@ -52,4 +51,3 @@ class dMsgBoxManager_c : public dStageActor_c {
 			entry_s entry[1];
 		};
 };
-#endif /* MSGBOX_H */

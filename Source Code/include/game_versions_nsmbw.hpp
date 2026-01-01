@@ -1,5 +1,4 @@
-#ifndef GAME_VERSIONS_NSMBW_H
-#define GAME_VERSIONS_NSMBW_H
+#pragma once
 
 // MIT License
 
@@ -119,5 +118,3 @@
 // should really check for IS_GAME_VERSION_DYNAMIC before attempting to
 // do any logic based on the region and/or revision
 #endif
-
-#endif // GAME_VERSIONS_NSMBW_H

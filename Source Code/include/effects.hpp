@@ -1,6 +1,4 @@
-#ifndef __EFFECTS_H
-#define __EFFECTS_H
-
+#pragma once
 #include <common.hpp>
 #include <game.hpp>
 
@@ -17,5 +15,3 @@ bool CreateEffect(int effect_num, Vec* pos, S16Vec* rot = 0, Vec* scale = 0);
 
 // Actually will return an EGG::Effect instance
 //void* CustomEffectSpawn(const char* name);
-
-#endif

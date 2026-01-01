@@ -1,6 +1,4 @@
-#ifndef __KAMEK_G3DHAX_H
-#define __KAMEK_G3DHAX_H
-
+#pragma once
 #include <common.hpp>
 
 // nw4r::g3d wrapper
@@ -447,6 +445,3 @@ void SetupTextures_Boss(m3d::mdl_c *model, int sceneID); // 800B4050
 void SetupTextures_Enemy(m3d::mdl_c *model, int sceneID); // 800B4170
 void SetupTextures_MapObj(m3d::mdl_c *model, int sceneID); // 800B42B0
 void SetupTextures_Item(m3d::mdl_c *model, int sceneID); // 800B43D0
-
-#endif
-

@@ -1,5 +1,5 @@
 #include <game.hpp>
-#include <playerAnim.hpp>
+#include <player.hpp>
 #include <profileid.hpp>
 #include <sfx.hpp>
 #include <stage.hpp>

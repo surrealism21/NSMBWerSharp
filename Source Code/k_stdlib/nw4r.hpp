@@ -1,6 +1,4 @@
-#ifndef __KAMEK_NW4R_H
-#define __KAMEK_NW4R_H
-
+#pragma once
 #include <kamek.hpp>
 #include <tpl.hpp>
 #include <gx.hpp>
@@ -573,5 +571,3 @@ namespace nw4r {
 		};
 	}
 }
-
-#endif

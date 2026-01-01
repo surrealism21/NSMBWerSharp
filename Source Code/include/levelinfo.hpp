@@ -1,5 +1,4 @@
-#ifndef __NEWER_LEVELINFO_H
-#define __NEWER_LEVELINFO_H
+#pragma once
 #include <game.hpp>
 
 class dLevelInfo_c {
@@ -95,6 +94,3 @@ enum LevelNumber {
     Stage_Staffroll = 41,
     Stage_Invalid = 42,
 };
-
-
-#endif

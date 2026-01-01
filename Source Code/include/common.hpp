@@ -24,12 +24,6 @@ namespace nw4r { namespace db {
 }}
 
 // Stop the auto completion from whining
-#ifdef __CLANG
-inline void *operator new(unsigned int size, void *ptr) { return ptr; }
-float abs(float value);
-double abs(double value);
-#endif
-#ifndef __CLANG
 inline void *operator new(size_t size, void *ptr) { return ptr; } // dare i say best hack ever concocted
 
 inline float abs(float value) {
@@ -38,7 +32,6 @@ inline float abs(float value) {
 inline double abs(double value) {
 	return __fabs(value);
 }
-#endif
 
 typedef struct { f32 frame, value, slope; } HermiteKey;
 float GetHermiteCurveValue(float current_frame, HermiteKey* keys, unsigned int key_count);

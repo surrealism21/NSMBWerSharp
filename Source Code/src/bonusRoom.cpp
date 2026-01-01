@@ -3,7 +3,7 @@
 #include <g3dhax.hpp>
 #include <profileid.hpp>
 #include <sfx.hpp>
-#include <playerAnim.hpp>
+#include <player.hpp>
 #include <stage.hpp>
 #include <profile.hpp>
 

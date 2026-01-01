@@ -1,5 +1,4 @@
-#ifndef POWERUPHAX_H
-#define POWERUPHAX_H 
+#pragma once
 
 class dHammerSuitRenderer_c {
 	public:
@@ -22,5 +21,3 @@ class dHammerSuitRenderer_c {
 
 		static dHammerSuitRenderer_c *build();
 };
-
-#endif /* POWERUPHAX_H */

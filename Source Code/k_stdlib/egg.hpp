@@ -1,6 +1,4 @@
-#ifndef __KAMEK_EGG_H
-#define __KAMEK_EGG_H
-
+#pragma once
 #include <kamek.hpp>
 #include <nw4r.hpp>
 
@@ -96,5 +94,3 @@ namespace EGG {
 		u32 getEntryFromMID(int index) const;
 	};
 }
-
-#endif

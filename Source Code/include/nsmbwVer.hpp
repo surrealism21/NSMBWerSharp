@@ -1,5 +1,4 @@
-#ifndef NSMBWVER_H
-#define NSMBWVER_H
+#pragma once
 
 enum NSMBWVer
 {
@@ -14,5 +13,3 @@ enum NSMBWVer
 };
 
 NSMBWVer getNsmbwVer();
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef __KAMEK_BASE_HOOKS_H
-#define __KAMEK_BASE_HOOKS_H
+#pragma once
 
 // allow Kamek hooks to be defined from C++ source files
 #pragma section ".kamek"
@@ -86,5 +85,3 @@
 	kmCallDefInt(__COUNTER__, addr, returnType, __VA_ARGS__)
 #define kmCallDefAsm(addr) \
 	kmCallDefInt(__COUNTER__, addr, asm void, )
-
-#endif

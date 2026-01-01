@@ -1,4 +1,6 @@
+#pragma once
 #include <kamek.hpp>
+
 // Heavily modified by Treeki, to be mostly compatible
 // with the RVL_SDK GX functions
 
@@ -31,10 +33,6 @@ distribution.
 
 -------------------------------------------------------------*/
 
-
-#ifndef __GX_STRUCT_H__
-#define __GX_STRUCT_H__
-
 /*!
 \file gx_struct.h
 \brief support header
@@ -42,9 +40,7 @@ distribution.
 
 //#include <gctypes.hpp>
 
-#ifdef __cplusplus
-   extern "C" {
-#endif /* __cplusplus */
+extern "C" {
 
 
 /*!
@@ -75,8 +71,4 @@ typedef struct _gx_rmodeobj {
 	u8  vfilter[7];
 } GXRModeObj;
 
-#ifdef __cplusplus
-   }
-#endif /* __cplusplus */
-
-#endif
+}

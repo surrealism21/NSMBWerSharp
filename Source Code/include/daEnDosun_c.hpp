@@ -1,6 +1,4 @@
-#ifndef __DOSUN_H
-#define __DOSUN_H
-
+#pragma once
 #include <daEnemy_c.hpp>
 
 /* All Addresses NTSCv2 */
@@ -67,6 +65,3 @@ public:
 	REF_NINTENDO_STATE(DieFall);
 	REF_NINTENDO_STATE(Ice);
 };
-
-#endif
-

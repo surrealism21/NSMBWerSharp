@@ -1,12 +1,9 @@
-#ifndef __PLAYER_H
-#define __PLAYER_H
-
+#pragma once
 #include <common.hpp>
 #include <game.hpp>
 #include <g3dhax.hpp>
 #include <stage.hpp>
 #include <sfx.hpp>
-
 
 extern "C" bool SpawnEffect(const char*, int, Vec*, S16Vec*, Vec*);
 
@@ -43,6 +40,3 @@ void BossGoalForAllPlayers();
 
 bool GrowBoss(daBoss* actor, daKameckDemo *Kameck, float initialScale, float endScale, float yPosModifier, int timer);
 bool ShrinkBoss(daBoss *actor, Vec *pos, float scale, int timer);
-
-#endif
-

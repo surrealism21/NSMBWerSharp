@@ -1,15 +1,5 @@
-#ifndef __KAMEK_STATE_H
-#define __KAMEK_STATE_H
-
+#pragma once
 #include <common.hpp>
-
-#ifdef REGION_PAL
-	#define SAVED_STATE_TABLE (*((ObjState**)(0x8042A210)))
-#endif
-
-#ifdef REGION_NTSC
-	#define SAVED_STATE_TABLE (*((ObjState**)(0x80429F30)))
-#endif
 
 struct ObjState {
 	s16 area;
@@ -20,5 +10,3 @@ struct ObjState {
 
 s16 RestoreObjectState(ObjState *table, s16 area, float objX, float objY);
 s32 StoreObjectState(ObjState *table, s16 area, s16 value, float objX, float objY);
-
-#endif

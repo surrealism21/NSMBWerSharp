@@ -1,6 +1,4 @@
-#ifndef __KAMEK_STAGE_H
-#define __KAMEK_STAGE_H
-
+#pragma once
 #include <common.hpp>
 #include <course.hpp>
 
@@ -102,23 +100,3 @@ enum Wipes {
 void ExitStage(int scene, int sceneParams, int powerupStoreType, int wipe);
 
 extern PowerupStoreTypes LastPowerupStoreType;
-
-
-
-
-#endif
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

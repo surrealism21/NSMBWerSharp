@@ -4,7 +4,7 @@
 #include <profileid.hpp>
 #include <sfx.hpp>
 #include <stage.hpp>
-#include <playerAnim.hpp>
+#include <player.hpp>
 #include <boss.hpp>
 #include <profile.hpp>
 

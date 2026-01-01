@@ -1,6 +1,4 @@
-#ifndef __KAMEK_SFX_H
-#define __KAMEK_SFX_H
-
+#pragma once
 #include <common.hpp>
 
 enum SFX {
@@ -1984,5 +1982,3 @@ enum SFX {
 	SE_GAKKI_L_1_ON = 1976,
 	SE_GAKKI_L_2_ON = 1977
 };
-
-#endif

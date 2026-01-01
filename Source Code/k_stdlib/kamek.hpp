@@ -1,11 +1,8 @@
-/*
- * Kamek Standard Library
- * Wii game patching engine
- * (c) Treeki 2010-2018
- */
+#pragma once
 
-#ifndef __KAMEK_H
-#define __KAMEK_H
+// Kamek Standard Library
+// Wii game patching engine
+// (c)Treeki 2010-2018
 
 #ifndef __MWERKS__
 #error "Kamek requires the CodeWarrior compiler!"
@@ -41,6 +38,3 @@ typedef unsigned long size_t;
 #include <base/hooks.hpp>
 #include <base/c_stdlib.hpp>
 #include <base/rvl_sdk.hpp>
-
-#endif
-

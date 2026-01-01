@@ -1,6 +1,4 @@
-#ifndef __NEWER_FILELOAD_H
-#define __NEWER_FILELOAD_H
-
+#pragma once
 #include <common.hpp>
 
 struct FileHandle {
@@ -69,6 +67,3 @@ private:
 
 
 // Todo: input stream maybe?
-
-#endif
-

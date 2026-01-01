@@ -1,5 +1,4 @@
 #pragma once
-
 #include <common.hpp>
 
 const wchar_t* getLevelNumber(int level);

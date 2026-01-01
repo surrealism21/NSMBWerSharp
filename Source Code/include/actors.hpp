@@ -1,6 +1,4 @@
-#ifndef __KAMEK_ACTORS_H
-#define __KAMEK_ACTORS_H
-
+#pragma once
 #include <common.hpp>
 
 enum Actors {
@@ -878,5 +876,3 @@ Actor *FindActorByType(Actors type, Actor *startFrom);
 // Custom functions
 Actors translateActorID(Actors id);
 Actors adjustID(Actors id);
-
-#endif

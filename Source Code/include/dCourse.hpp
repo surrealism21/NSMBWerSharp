@@ -1,5 +1,4 @@
-#ifndef __DCOURSE_H
-#define __DCOURSE_H
+#pragma once
 
 // Proper headers for Course, not the old shit
 
@@ -263,6 +262,3 @@ class dCourseFull_c {
 		static void generateLevelFilename(int world, int level, char *outBuffer);
 		static char levelFilename[10];
 };
-
-#endif
-
