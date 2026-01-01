@@ -57,10 +57,10 @@ This mod's build system uses a build script bundled with an XML file. The XML fi
 ## Known issues/missing features from NewerSMBW, NSMBWer+, and/or NSMBWer#
 - The NewerSMBW chestnut sprite crashes the game when opened if set to contain a spiny, and the spiny sprite was not loaded in a level
 - The NewerSMBW chestnut sprite can spawn "moonwalking" goombas if set to contain a goomba
-- The NewerSMBW bone piece sprite does not have any collision one rotation reaches 90 degrees
-- Many Newer sprites are limited due to a lack of dynamic memory allocation
+- The NewerSMBW bone piece sprite does not have any collision once rotation reaches 90 degrees
 - The NewerSMBW player clown car sprite does not work properly, and is currently not recommended for use.
 - Most NewerSMBW sprites do not award points on defeat, and/or cannot be frozen/behave weirdly when frozen
+- Many Newer sprites are limited due to a lack of dynamic memory allocation
 - Yoshi's egg textures are generally quite broken
 - PowerupHax (the hammer suit) has not properly been implemented yet
 
@@ -128,6 +128,9 @@ https://github.com/MandyIGuess
 https://github.com/kirbluemodding
 
 [kingpixel]:
+https://github.com/TheRealKingPixel
+
+[ryguy0777]:
 https://github.com/TheRealKingPixel
 
 
