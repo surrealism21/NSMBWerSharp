@@ -74,7 +74,8 @@ All links should link to the people/projects involved. If there are any issues, 
 - [Newer Team][newerteam] - [NewerSMBW][newerwii] and its code, models, sound effects, etc.
 - [Nin0][nin0] & [NSMLW Team][nsmlw] - Programming assistance, general assistance, numerous bits of code, [original NSMBWer][nsmbwer], SpriteTex/recolors for the Yoshi egg particles
 - [Danster64][danster] - [Original NSMBWer][nsmbwer]
-- BupCraft, Lurker, Smecko Geck, [Kirblue][k*rblue], SupaNES, [King Pixel][kingpixel] & Others - Bug reporting
+- BupCraft, Lurker, Smecko Geck, SupaNES, [King Pixel][kingpixel] & Others - Bug reporting
+- [Kirblue][k*rblue] - Bug reporting, logo, code assistance, more
 - [CLF78][clf] - [Original NSMBWer][nsmbwer], Korean/Taiwanese support
 - Luminyx - Programming assistance
 - [RoadrunnerWMC][roadrunner] - Reggie! Next spritedata, [NSMBW-Updated][updated], Korean/Taiwanese support
@@ -130,8 +131,8 @@ https://github.com/kirbluemodding
 [kingpixel]:
 https://github.com/TheRealKingPixel
 
-[ryguy0777]:
-https://github.com/TheRealKingPixel
+[ryguy]:
+https://github.com/Ryguy0777
 
 
 
