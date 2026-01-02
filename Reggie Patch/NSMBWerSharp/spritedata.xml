@@ -1565,7 +1565,7 @@
       <entry value="6">Skull + 6 Platforms</entry>
       <entry value="7">Skull + 7 Platforms</entry>
     </list>
-    <list nybble="6" title="Color" comment="This determines the color of the Spine Coaster. The current colors both either show no difference, or crash the game.">
+    <list nybble="6" title="Color" comment="This determines the color of the Spine Coaster.">
       <entry value="0">Original</entry>
       <entry value="1">Light Blue</entry>
       <entry value="2">Black</entry>
@@ -1576,9 +1576,9 @@
   </sprite> <!-- #297: Spine Coaster -->
   
   <sprite id="302" name="Climbing Koopa - Cliffs" notes="Koopas that hang from cliff edges and shimmy across them." advancednotes="This sprite's constructor (and the sprite settings) was removed from the vanilla game and has been restored. There may have been more settings for this sprite at one point.">
-	  <dualbox nybble="10" title1="Walks Off Ledges" title2="Turns Around At Ledges" comment="This determines if the Cliff Koopa will mindlessly walk off of ledges or if it will turn around when it reaches a ledge." comment2="This also changes the color of the Cliff Koopa."/>
-	  <dualbox nybble="11" title1="Spawns Moving Left" title2= "Spawns Moving Right" comment="This determines what direction the Cliff Koopa will spawn."/>
-    <checkbox nybble="12" title="Spawn Locaton Fix" comment="by default, this sprite is placed too low to be useful. This setting will spawn them properly."/>
+	<dualbox nybble="10" title1="Walks Off Ledges" title2="Turns Around At Ledges" comment="This determines if the Cliff Koopa will mindlessly walk off of ledges or if it will turn around when it reaches a ledge." comment2="This also changes the color of the Cliff Koopa."/>
+	<dualbox nybble="11" title1="Spawns Moving Left" title2= "Spawns Moving Right" comment="This determines what direction the Cliff Koopa will spawn."/>
+	<checkbox nybble="12" title="Spawn Locaton Fix" comment="by default, this sprite is placed too low to be useful. This setting will spawn them properly."/>
   </sprite> <!-- #302: Cliff Koopa -->
 
   <sprite id="303" name="Monty Mole" notes="An energetic mole enemy that will pop out of the terrain after loading on screen and proceed to move quickly after the player. A Monty Hole is left behind after the mole jumps out.">
@@ -1961,6 +1961,11 @@
  
   <sprite id="484" name="Spine Coaster Platform" notes="This creates immobile 'Spine Coaster' Platforms (1x2). The Sprite's placement represents the right side of the Platform.">
     <dualbox nybble="5.4" title1="Horizontal Platform" title2="Angled Platform" comment="This determines if the platform is flat (horizontal), or if it is tilted at an angle."/>
+    <list nybble="8" title="Color" comment="This determines the color of the Spine Coaster Platform.">
+      <entry value="0">Original</entry>
+      <entry value="1">Light Blue</entry>
+      <entry value="2">Black</entry>
+    </list>
     <dualbox nybble="6.1" title1="Angles Left" title2="Angles Right" comment="This determines which direction the platform will be angled." requirednybble="5.4"/> <!-- Appears only if Angled is enabled -->
     <list nybble="6.2-6.4" title="Angle" comment="This determines the amount of tilt the platform will have." comment2="Angles greater than 45° have glitchy collision and are not recommended." requirednybble="5.4-6.1" requiredval="2">
       <entry value="7">11.25°</entry>
@@ -2714,8 +2719,16 @@
 
   <sprite id="534" name="Newer Cutscene Controller: Credits" notes="This controller manages NewerSMBW's credits and staffroll after the final Bowser fight.">
     <dependency notes="There are several hardcoded dependencies involved in this, so it is not usable outside of the established level and arrangement. The Staffroll credits themselves however have an editor available for them."/>
-	<checkbox nybble="12.4" title="Plays cutscene when finished" comment="If enabled, the post-credits cutscene will play when the credits end."/>
-	<checkbox nybble="12.3" title="Show credits highscore" comment="Shows the most coins collected during the credits, if enabled."/>
+	  <checkbox nybble="12.4" title="Plays cutscene when finished" comment="If enabled, the post-credits cutscene will play when the credits end."/>
+	  <checkbox nybble="12.3" title="Show credits highscore" comment="Shows the most coins collected during the credits, if enabled."/>
   </sprite> <!-- #534: Cutscene Controller - Newer Credits -->
+
+  <sprite id="535" name="Multi-Coin" notes="A large coin that can award either 10 or 100 coins.">
+    <list nybble="5" title="Type" comment="This determines what variation of the coin to use." comment2="Multiple types and functions for this sprite can be added by modifying its code file.">
+      <entry value="0">10-Coin</entry>
+      <entry value="1">100-Coin</entry>
+    </list>
+  </sprite> <!-- #538: Multi-Coin -->
+
 </sprites>
 <!-- Thank you so much for a-playing my game! -->

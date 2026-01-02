@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<game name="NSMBWer#" version="1.0" description="NSMBWer+ mod with bugfixes and more.">
+<game name="NSMBWer# Extra Features" version="1.0">
     <folder name="sprites" path="sprites"/>
     <folder name="external" path="external" />
     <file name="spritedata" path="spritedata.xml"/>

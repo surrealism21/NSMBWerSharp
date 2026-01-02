@@ -101,5 +101,6 @@
         <build>worldmapScripts.cpp</build>
         <build>worldmapScripts.S</build>
         <build>classic_controller.S</build>
+        <build>multiCoin.cpp</build>
     </modules>
 </project>

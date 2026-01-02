@@ -1,20 +1,20 @@
-<wiidisc version="1" shiftfiles="true" root="/NSMBWerSharp" log="true">
+<wiidisc version="1" shiftfiles="true" root="/NSMBWerSharp-ExtraFeatures" log="true">
 	<id game="SMN">
 		<region type="P"/>
 		<region type="E"/>
 		<region type="J"/>
 		<region type="K"/>
 		<region type="W"/>
-		<!-- <region type="C"/> NSMBW's Chinese version is really weird, so I'm going to leave this commented. If you somehow manage to get the Shield version working with this, go ahead and uncomment this. -->
+		<!-- <region type="C"/> -->
 	</id>
 	<options>
 		<section name="NSMBWer#">
-			<option name="Game" id="NSMBWerSharp" default="1">
-				<choice name="Enabled"><patch id="NSMBWerSharp"/></choice>
+			<option name="Game" id="NSMBWerExtraSharp" default="1">
+				<choice name="Enabled"><patch id="NSMBWerExtraSharp"/></choice>
 			</option>
 		</section>
 	</options>
-	<patch id="NSMBWerSharp">
+	<patch id="NSMBWerExtraSharp">
 		<savegame external="/save/{$__gameid}{$__region}" clone="false" />
 		
 		<!-- Makes this patch recursive, which causes the folder structure to be less exacting. If you trust that you can handle the folder structure on your own, remove or comment this line. -->

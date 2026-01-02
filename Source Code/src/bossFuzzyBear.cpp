@@ -7,6 +7,8 @@
 #include <boss.hpp>
 #include <profile.hpp>
 
+extern "C" void dAcPy_vf3F8(void* player, dEn_c* monster, int t);
+
 class daFuzzyBear_c : public daBoss {
 	int onCreate();
 	int onDelete();
@@ -93,8 +95,8 @@ bool daFuzzyBear_c::collisionCat1_Fireball_E_Explosion(ActivePhysics *apThis, Ac
 	return true;
 }
 bool daFuzzyBear_c::collisionCat7_GroundPound(ActivePhysics *apThis, ActivePhysics *apOther) {
-	this->counter_504[apOther->owner->which_player] = 0;
-	return this->collisionCat9_RollingObject(apThis, apOther);
+	dAcPy_vf3F8(apOther->owner, this, 3); // knock player back without damaging
+	return true;
 }
 bool daFuzzyBear_c::collisionCat7_GroundPoundYoshi(ActivePhysics *apThis, ActivePhysics *apOther) {
 	this->counter_504[apOther->owner->which_player] = 0;

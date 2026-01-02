@@ -552,6 +552,8 @@ enum
 	WATER_LIFT = 532,
 	AC_LINEGOD = 533,
 	AC_NEWER_ENDING_MAIN = 534,
+	// NSMBWer# extras start here
+	EN_COIN_MULTI = 535,
 
     Num
 };
@@ -1378,6 +1380,8 @@ enum
 	EN_PENGI, //802
 	WM_MANAGER, //803
 	AC_NEWER_ENDING_MAIN, //804
+	// NSMBWer# extras start here
+	EN_COIN_MULTI, //805
 
     Num
 };

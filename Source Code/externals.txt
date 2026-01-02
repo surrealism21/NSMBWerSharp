@@ -1,3 +1,7 @@
+	incCoin = 0x80060250
+	addScore = 0x80060690
+	displayScoreAddPopup = 0x800B3540
+	
 	returnFromScaleTable2 = 0x808eb668
 	returnFromScaleTable = 0x809032fc
 

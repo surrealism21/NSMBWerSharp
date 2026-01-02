@@ -817,6 +817,8 @@ enum Actors {
 	EN_PENGI, //802
 	WM_MANAGER, //803
 	AC_NEWER_ENDING_MAIN, //804
+	// NSMBWer# extras start here
+	EN_COIN_MULTI, //805
 };
 
 struct Actor {
