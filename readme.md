@@ -37,6 +37,7 @@ Kamek 2 is a significantly improved system (over Kamek 1, which mods like NSMBWe
     - The meteor sprite's electricity can no longer be killed
     - SpriteTex settings no longer crash the game or cause issues
 - Unused SpriteTex settings on sprites now have working and/or new options for colors
+- Code data is now compressed with LZ11, reducing the base code size from 561 kB to 242 kB.
 
 ## Building
 This mod's build system uses a build script bundled with an XML file. The XML file is cross-platform and should contain all C++ and ASM files for your mod.
@@ -49,10 +50,9 @@ This mod's build system uses a build script bundled with an XML file. The XML fi
 ### Linux
 - **Wine is needed to run the compiler/assembler; if you haven't already installed it, you'll need to do this.**
 - Run the `build.sh` bash script.
-    - **Some distros may require a escape backslash for the `\$` symbols used in the Kamek arguments**, so if you're on one of those (Ubuntu based) distros, add the escape backslashes for the `\$s`. `build.sh` will also output to the `build` folder.
 
 ### MacOS
- - No build script currently exists for MacOS. If anyone is intrested in creating one, a pull request would be greatly appreciated!
+ - MacOS is not a 100% guarantee for function.
 
 ## Known issues/missing features from NewerSMBW, NSMBWer+, and/or NSMBWer#
 - The NewerSMBW chestnut sprite crashes the game when opened if set to contain a spiny, and the spiny sprite was not loaded in a level
@@ -63,8 +63,12 @@ This mod's build system uses a build script bundled with an XML file. The XML fi
 - Many Newer sprites are limited due to a lack of dynamic memory allocation
 - Yoshi's egg textures are generally quite broken
 - PowerupHax (the hammer suit) has not properly been implemented yet
+- Some code hacks that require injection earlier than base Kamek are not currently possible.
 
 If you find any more issues or missing features, please open a pull request!
+
+# Should I use it?
+yes
 
 ## NSMBWer+ & NSMBWer# Credits (in no specific order)
 All links should link to the people/projects involved. If there are any issues, please feel free to open a pull request.
