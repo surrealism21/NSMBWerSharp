@@ -37,4 +37,4 @@
     - Don't name any extern functions from the original `FUN_XXXXXXXX`. If you're using a function, you should know what it does!
     - Don't decompile a function unless you want to change the whole thing. NSMBW-Decomp is [that way](https://github.com/NSMBW-Community/NSMBW-Decomp).
 - If you're going to rename a existing symbol, please insure it works before pulling. Newer's codebase is... unsanitary.
-- Avoid making radical changes to headers as the folks at Extra Features may want this sauce as well
+- Avoid making radical changes to headers unless you can merge them to the other branch as the folks at Extra Features may want this sauce as well
