@@ -114,3 +114,6 @@ kmWrite32(0x802f4e80,0x00000000);
 kmWrite32(0x802f4e81,0x41800000);
 kmWrite32(0x802f4e82,0x41900000);
 kmWrite32(0x802f4e83,0x41900000);
+
+// Fix a bug where the giant floating log is layered above sand
+kmWrite32(0x80A63698, 0xC07FFF8C);

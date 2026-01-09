@@ -4,6 +4,10 @@
         <include>k_stdlib</include>
         <include>include</include>
         <src>src</src>
+        
+        <requiredheader_hard>game.hpp</requiredheader_hard>
+        <requiredheader>profileid.hpp</requiredheader>
+        <requiredheader>asm_profiles.S</requiredheader>
     </meta>
     <modules>
         <build>soundPlayer.S</build>
@@ -39,8 +43,8 @@
         <build>msgbox.S</build>
         <build>music.cpp</build>
         <build>nsmbwVer.cpp</build>
-        <build>profile.cpp</build>
-        <build>profile.S</build>
+        <build_kor>profile.cpp</build_kor>
+        <build_kor>profile.S</build_kor>
         <build>others.cpp</build>
         <build>others.S</build>
         <build>topman.cpp</build>

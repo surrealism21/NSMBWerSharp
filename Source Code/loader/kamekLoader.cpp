@@ -226,7 +226,7 @@ void loadKamekBinary(const loaderFunctions *funcs, const void *binary, u32 binar
 }
 
 
-void loadKamekBinaryFromDisc(const loaderFunctions *funcs, const char *path)
+void loadKamekBinaryFromDisc(const loaderFunctions *funcs, char *path)
 {
 	funcs->OSReport("{Kamek by Treeki}\nLoading Kamek binary ", path);
 	funcs->OSReport("'%s'...\n", path);
@@ -242,7 +242,7 @@ void loadKamekBinaryFromDisc(const loaderFunctions *funcs, const char *path)
 	if (!funcs->DVDFastOpen(entrynum, &handle))
 		kamekError(funcs, "FATAL ERROR: Failed to open file!");
 	
-	funcs->OSReport("DVD file located: addr=%p, size=%d\n", handle.address, handle.length);
+	funcs->OSReport("DVD file located at [%p], with a size of [%d] bytes\n", handle.address, handle.length);
 
 	u32 length = handle.length, roundedLength = (handle.length + 0x1F) & ~0x1F;
 	void *buffer = funcs->kamekAlloc(roundedLength, false, funcs);
@@ -254,6 +254,57 @@ void loadKamekBinaryFromDisc(const loaderFunctions *funcs, const char *path)
 
 	loadKamekBinary(funcs, buffer, handle.length);
 	
+	funcs->kamekFree(buffer, false, funcs);
+	funcs->OSReport("All done!\n");
+	funcs->OSReport("NSMBWer# 1.0\n");
+	funcs->OSReport("Hacks by surrealismtheta and others\n");
+}
+
+void loadCompressedKamekBinaryFromDisc(const loaderFunctions *funcs, char *path) {
+	funcs->OSReport("{Kamek by Treeki}\nLoading compressed Kamek binary ", path);
+	funcs->OSReport("'%s'...\n", path);
+
+	int entrynum = funcs->DVDConvertPathToEntrynum(path);
+	if (entrynum < 0) {
+		char err[512];
+		funcs->sprintf(err, "FATAL ERROR: Failed to locate file on the disc: %s", path);
+		kamekError(funcs, err);
+	}
+
+	DVDHandle handle;
+	if (!funcs->DVDFastOpen(entrynum, &handle))
+		kamekError(funcs, "FATAL ERROR: Failed to open file!");
+	
+	funcs->OSReport("DVD file located at [%p], with a compressed size of [%d] bytes", handle.address, handle.length);
+
+	u32 length = handle.length, roundedLength = (handle.length + 0x1F) & ~0x1F;
+	void *sourceBuf = funcs->kamekAlloc(roundedLength, false, funcs);
+	if (!sourceBuf)
+		kamekError(funcs, "FATAL ERROR: Out of file memory");
+	
+	funcs->DVDReadPrio(&handle, sourceBuf, roundedLength, 0, 2);
+	// we're done with reading files
+	funcs->DVDClose(&handle);
+
+	// get the uncompressed size of the data
+	u32 bufSize = funcs->CXGetUncompressedSize(sourceBuf);
+	// note: even though the appears right after the "size" thing in OSReport it's actually here huh
+	funcs->OSReport(" and a decompressed size of [%d] bytes.\n", bufSize);
+
+	// allocate a buffer for the data
+	void* buffer = funcs->kamekAlloc(bufSize, false, funcs);
+	// Decompress the data into the buffer
+	funcs->CXUncompressLZ(sourceBuf, buffer);
+	if (!buffer) {
+		kamekError(funcs, "FATAL ERROR: Code decompression failed");
+	}
+
+	// free the LZ compressed content
+	funcs->kamekFree(sourceBuf, false, funcs);
+
+	// Load with the decompressed code
+	loadKamekBinary(funcs, buffer, bufSize);
+
 	funcs->kamekFree(buffer, false, funcs);
 	funcs->OSReport("All done!\n");
 	funcs->OSReport("NSMBWer# 1.0\n");
