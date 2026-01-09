@@ -4,6 +4,7 @@
 
 #if defined(REGION_KW) || defined(REGION_C)
 	#define ORIGINAL_PROFILES 752
+    const char what[43] = "Hi there i'm in korea and this is a PROFIL";
 #else
 	#define ORIGINAL_PROFILES 750
 #endif

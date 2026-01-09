@@ -7,7 +7,7 @@ kmCondWritePointer(0x80327E98, 0x8015B930, loadIntoNSMBW); // JP
 kmCondWritePointer(0x80334E60, 0x8015C060, loadIntoNSMBW); // KR
 kmCondWritePointer(0x80333218, 0x8015C060, loadIntoNSMBW); // TW
 
-typedef void *(*EGG_Heap_Alloc_t) (u32 size, s32 align, void *heap);
+typedef void* (*EGG_Heap_Alloc_t) (u32 size, s32 align, void *heap);
 typedef void (*EGG_Heap_Free_t) (void *buffer, void *heap);
 
 struct loaderFunctionsEx {
@@ -39,7 +39,9 @@ const loaderFunctionsEx functions_p = {
 	(DVDClose_t) 0x801CAB40,
 	(sprintf_t) 0x802E1ACC,
 	allocAdapter,
-	freeAdapter},
+	freeAdapter,
+	(CXUncompressLZ) 0x801D82D0,
+	(CXGetUncompressedSize) 0x801D8290,},
 	(EGG_Heap_Alloc_t) 0x802B8E00,
 	(EGG_Heap_Free_t) 0x802B90B0,
 	(void **) 0x80377F48,
@@ -54,7 +56,9 @@ const loaderFunctionsEx functions_e = {
 	(DVDClose_t) 0x801CAA00,
 	(sprintf_t) 0x802E17DC,
 	allocAdapter,
-	freeAdapter},
+	freeAdapter,
+	(CXUncompressLZ) 0x801D8190,
+	(CXGetUncompressedSize) 0x801D8150,},
 	(EGG_Heap_Alloc_t) 0x802B8CC0,
 	(EGG_Heap_Free_t) 0x802B8F70,
 	(void **) 0x80377C48,
@@ -69,7 +73,9 @@ const loaderFunctionsEx functions_j = {
 	(DVDClose_t) 0x801CA810,
 	(sprintf_t) 0x802E15EC,
 	allocAdapter,
-	freeAdapter},
+	freeAdapter,
+	(CXUncompressLZ) 0x801D7FA0,
+	(CXGetUncompressedSize) 0x801D7F60},
 	(EGG_Heap_Alloc_t) 0x802B8AD0,
 	(EGG_Heap_Free_t) 0x802B8D80,
 	(void **) 0x803779C8,
@@ -84,7 +90,9 @@ const loaderFunctionsEx functions_k = {
 	(DVDClose_t) 0x801CAF40,
 	(sprintf_t) 0x802E1D1C,
 	allocAdapter,
-	freeAdapter},
+	freeAdapter,
+	(CXUncompressLZ) 0x801D86D0,
+	(CXGetUncompressedSize) 0x801D8690,},
 	(EGG_Heap_Alloc_t) 0x802B9200,
 	(EGG_Heap_Free_t) 0x802B94B0,
 	(void **) 0x80384948,
@@ -99,7 +107,9 @@ const loaderFunctionsEx functions_w = {
 	(DVDClose_t) 0x801CAF40,
 	(sprintf_t) 0x802E1D1C,
 	allocAdapter,
-	freeAdapter},
+	freeAdapter,
+	(CXUncompressLZ) 0x801D86D0,
+	(CXGetUncompressedSize) 0x801D8690,},
 	(EGG_Heap_Alloc_t) 0x802B9200,
 	(EGG_Heap_Free_t) 0x802B94B0,
 	(void **) 0x80382D48,
@@ -155,11 +165,29 @@ int loadIntoNSMBW()
 	}
 
 	char path[64];
-	if (version == 0)
+	
+	#define COMPRESSION
+	#ifndef COMPRESSION
+	const u8 pad[7] = ".LZ.LZ";
+	if (version == 0) {
 		funcs->sprintf(path, "/Code/%c.bin", region);
-	else
+	}
+	else {
 		funcs->sprintf(path, "/Code/%c%d.bin", region, version);
+	}
 	loadKamekBinaryFromDisc(funcs, path);
+
+	#else
+
+	if (version == 0) {
+		funcs->sprintf(path, "/Code/%c.bin.LZ", region);
+	}
+	else {
+		funcs->sprintf(path, "/Code/%c%d.bin.LZ", region, version);
+	}
+	loadCompressedKamekBinaryFromDisc(funcs, path);
+
+	#endif
 
 	return 1;
 }
