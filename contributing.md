@@ -1,40 +1,31 @@
-# "I've suddenly gained an affinity for the pound sign and wish to contribute!"
-## This is the main branch
- The main branch, at this point, is about finding problems in the game and fixing them! This generally includes:
+# Contribution Guidelines
+## Basic Information
+This is the main branch. The main branch, at this point, is about finding problems in the game and fixing them. This generally includes:
  - Base game bug fixes
  - Newer code fixes
  - Optimizations
- - Documentation (be careful with this one, see its' section)
+ - Documentation (look further down for more information regarding this)
 
 ## Code guidelines
-### Files
-- C++ files are `.cpp`, and assembly files are `.S`.
-- Please use the folders for their intended purposes.
-
-### Headers
-- Please use `.hpp` files for headers, this is a C++ project.
-- When including headers, use `#include <...>` please.
-- Use `#pragma once` rather than include guards, they are ugly.
-
-- Please avoid inline ASM and ASM branches inside C++ files, assembly files exist for a reason!
-- If applicable, 
-
+### File structure and file extensions
+- C++ files should have the `.cpp` extension.
+- Assembly files should have the `.S` extension.
+- C++ headers should have the `.hpp` extension.
+- Please use the folders for their intended purposes. Avoid putting things like headers in `/src/`.
+- When including headers, use `#include <...>` rather than `#include "..."`. This project does not put headers in the same folder as main files, so quotation includes are not needed.
+- Use `#pragma once` instead of include guards when needed.
+- Try to avoid inline ASM and ASM branches inside C++ files; if needed, making a `.S` file is significantly cleaner and preferred.
 ### Code
 - Please try to keep your code readable. This means:
-    - Do NOT add any unnecessary suffixes or prefixes. The only currently accepted suffix / prefix pair is `d..._c` for classes.
-    - Make your variables public, this isn't a megacorp
-    - Use the `if` statement for checking something, and no more.
-    - Don't use `do {} while ()`!
-    - Code that resembles raw Ghidra decompilier output should be avoided unless nessacry (We're talking about those messes of parenthesis and pointers!)
-- Try to name any constants or externs near the top of the file. This is not a strict requirement, but...
-- You have to name your includes at the top! If you physically can't, the code is probably to hacky anyway.
-
-
+    - Avoid adding any unnecessary suffixes or prefixes. Simply `d..._c` or `da..._c` are preferred for classes.
+    - Keep variables public whenever possible.
+    - Try to avoid using anything besides the `if` statement for checking something (i.e. `do {} while ()`).
+    - Code that resembles raw Ghidra decompilier output should be avoided unless strictly necessary
+- Name constants or externs towards the top of the file. While this isn't entirely required, it's preferred for organization's sake.
+- Includes should go at the very top of the file, with the only exception being `#pragma once`, which is preferred to be at the very top regardless of includes.
 ### Documentation
-- Raw cracked symbols are ugly, this is a known fact.
-    - This repo is not a decompilation, so you don't need to get them right. Choose a ergonomic name, please, we're trying to **use** this code too!
-    - Yes, this means removing those suffixes and prefixes we know all too well.
-    - Don't name any extern functions from the original `FUN_XXXXXXXX`. If you're using a function, you should know what it does!
-    - Don't decompile a function unless you want to change the whole thing. NSMBW-Decomp is [that way](https://github.com/NSMBW-Community/NSMBW-Decomp).
-- If you're going to rename a existing symbol, please insure it works before pulling. Newer's codebase is... unsanitary.
-- Avoid making radical changes to headers unless you can merge them to the other branch as the folks at Extra Features may want this sauce as well
+- **Do not** use raw, cracked symbols.
+    - This repo is not a decompilation. As such, it's preferred that you name symbols something memorable and clear for others or future use.
+    - Avoid naming any extern functions from the original `FUN_XXXXXXXX`.
+    - Avoid partial decompilation of files unless you plan on finishing it later.
+- Avoid making radical changes to headers unless you can properly merge them.

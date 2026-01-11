@@ -65,10 +65,7 @@ This mod's build system uses a build script bundled with an XML file. The XML fi
 - PowerupHax (the hammer suit) has not properly been implemented yet
 - Some code hacks that require injection earlier than base Kamek are not currently possible.
 
-If you find any more issues or missing features, please open a pull request!
-
-# Should I use it?
-yes
+If you find any more issues or missing features, pull requests are always welcome.
 
 ## NSMBWer+ & NSMBWer# Credits (in no specific order)
 All links should link to the people/projects involved. If there are any issues, please feel free to open a pull request.
