@@ -52,3 +52,12 @@ This will create two files:
 - *loader.xml*: a **partial** Riivolution XML that includes a reference to *loader.bin* and the game hooks to invoke it.
 
 Copy the contents of *loader.xml* into your Riivolution XML's `<patch>` tag, and put *loader.bin* in your Riivolution patch's *Code* directory alongside your Kamekfiles.
+
+## NSMBWer# changes
+This version of the Kamek loader implements a define in nsmbw.cpp, "COMPRESSION", which toggles compression. Technically, as long as you have the addresses for near-identical (de)compression functions, you could add the compressed Kamekfiles to other game mods. Enjoy your minor data savings!
+
+> fun fact: The original game uses data compression for it's rel code! only it's LH which is a little less *legal* for us.
+
+### Plans
+We plan to change the loader to behave more like the NSMBW:TPC loader; and load code earlier (I think?) Either way, some mods that are currently not compatible will be!
+Also, add this build process to the build script (if the build script is told to build it.)
