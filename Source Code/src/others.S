@@ -546,3 +546,45 @@ SCMs: .string "Setting music to %d\n"
 
 .global Rrun
 Rrun: .string "Rrun"
+
+.text
+.extern returnFromLogFix # 80a636f0
+
+kmBranchDef 0x80a63694
+logFix:
+	# load floats
+	# r31 is -0x7f53...
+	lis r3,-0x7fbd
+	lfs f3,0x0(r31) # 0.0f
+	lfs f0,-0x4218(r3) # 80.0f
+	lis r4,-0x7fbd
+	lfs f1,0x3c(r31) # 384.0f
+	or r3,r30,r30
+	lfs f2,-0x4214(r4) # 256.0f
+	fadds f0,f1,f0
+	lfs f1,0x38(r31) # 1.0f
+
+	# load our NEW float
+	lfs f26,-0x74(r31) # this is -160
+
+	# store floats
+	stfs f26,0xb4(r30) # set the Z position to our new float in f26
+	stfs f1,0xdc(r30) # size.x
+	stfs f1,0xe0(r30) # size.y
+	stfs f1,0xe4(r30) # size.z
+
+	# store some crap in local stack thing
+	stfs f2,0x8(r1)
+	stfs f2,0xc(r1)
+	stfs f0,0x10(r1)
+	stfs f0,0x14(r1)
+
+	# visible area offsets
+	stfs f3,0x320(r30)
+	stfs f3,0x324(r30)
+	stfs f2,0x338(r30)
+	stfs f2,0x33c(r30)
+	stfs f0,0x340(r30)
+	stfs f0,0x344(r30)
+
+	b returnFromLogFix

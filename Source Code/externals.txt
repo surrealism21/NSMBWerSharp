@@ -2021,3 +2021,5 @@
 
 	instance__9dResMng_c = 0x8042a318
 	setRes__9dResMng_cFPCcPPCciPv = 0x800df8c0
+
+	returnFromLogFix = 0x80a636f0
