@@ -81,19 +81,19 @@ int dMultiCoin_c::onCreate() {
 		allocator.unlink();
 	}
 
-	ActivePhysics::Info HitMeBaby;
-	HitMeBaby.xDistToCenter = 0.0;
-	HitMeBaby.yDistToCenter = -3.0;
-	HitMeBaby.xDistToEdge = 12.0;
-	HitMeBaby.yDistToEdge = 15.0;
-	HitMeBaby.category1 = 0x5;
-	HitMeBaby.category2 = 0x0;
-	HitMeBaby.bitfield1 = 0x4F;
-	HitMeBaby.bitfield2 = 0xFFFFFFFF;
-	HitMeBaby.unkShort1C = 0;
-	HitMeBaby.callback = &dEn_c::collisionCallback;
+	ActivePhysics::Info APInfo;
+	APInfo.xDistToCenter = 0.0;
+	APInfo.yDistToCenter = -3.0;
+	APInfo.xDistToEdge = 12.0;
+	APInfo.yDistToEdge = 15.0;
+	APInfo.category1 = 0x5;
+	APInfo.category2 = 0x0;
+	APInfo.bitfield1 = 0x4F;
+	APInfo.bitfield2 = 0xFFBA7FFE;
+	APInfo.unkShort1C = 0;
+	APInfo.callback = &dEn_c::collisionCallback;
 
-	this->aPhysics.initWithStruct(this, &HitMeBaby);
+	this->aPhysics.initWithStruct(this, &APInfo);
 	this->aPhysics.addToList();
 
 	// model scale
