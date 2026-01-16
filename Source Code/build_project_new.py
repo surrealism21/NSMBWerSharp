@@ -255,6 +255,12 @@ class codeFile(file):
                 #print(self.filename+"... found!")
                 self.exists = True
                 return p+s.slash+self.filename
+    
+    def checkIfChanged(self):
+        if Path(self.objPath).is_file():
+            return super().checkIfChanged()
+        else:
+            return True
 
 class cppFile(codeFile):
     BuildDef = list()
