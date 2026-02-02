@@ -255,6 +255,12 @@ class codeFile(file):
                 #print(self.filename+"... found!")
                 self.exists = True
                 return p+s.slash+self.filename
+            
+    def checkIfChanged(self):
+        if not Path(self.objPath).is_file():
+                return True
+        else:
+            return super().checkIfChanged()
 
 class cppFile(codeFile):
     BuildDef = list()
@@ -369,6 +375,9 @@ def build_objects(region, SHUTUP=False):
                 if not SHUTUP:
                     #print("Building "+file.filename+" for "+region)
                     print(file.BuildDef)
+                    if file.BuildDef[file.BuildDef.__len__()-1] == None:
+                        print("ERROR: a file does not exist: "+file.filename)
+                        quit()
                     process = subprocess.Popen(file.BuildDef, stdin=PIPE, stdout=PIPE, text=True)
                     outputTuple = process.communicate()
 
@@ -469,5 +478,8 @@ if compression:
 
         with open(filename+".LZ", "wb") as cf:
             cf.write(compressed)
+            if filename == "build/P1.bin":
+                shutil.copyfile(filename+".LZ", "/home/surreal/.local/share/dolphin-emu/Load/Riivolution/NSMBWerSharp/Code/P1.bin.LZ")
+                print("Copy of relevant code done!")
         
         os.remove(filename)
