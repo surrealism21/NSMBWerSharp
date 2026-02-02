@@ -478,8 +478,5 @@ if compression:
 
         with open(filename+".LZ", "wb") as cf:
             cf.write(compressed)
-            if filename == "build/P1.bin":
-                shutil.copyfile(filename+".LZ", "/home/surreal/.local/share/dolphin-emu/Load/Riivolution/NSMBWerSharp/Code/P1.bin.LZ")
-                print("Copy of relevant code done!")
         
         os.remove(filename)
