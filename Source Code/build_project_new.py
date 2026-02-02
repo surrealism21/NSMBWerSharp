@@ -362,19 +362,20 @@ def build_objects(region, SHUTUP=False):
         if txt == "build_"+region_friendly_names["REGION_KW"]:
             KWOverride = True
 
-        if file != "a file. totally" and (file.checkIfChanged() or nocache == True):
-            if DidSomething == False:
-                DidSomething = True # this is a edgecase
-            if not SHUTUP:
-                #print("Building "+file.filename+" for "+region)
-                print(file.BuildDef)
-                process = subprocess.Popen(file.BuildDef, stdin=PIPE, stdout=PIPE, text=True)
-                outputTuple = process.communicate()
+        if file != "a file. totally":
+            if (file.checkIfChanged() or nocache == True) or (profileBuild == True and file.filename == "profile.cpp"):
+                if DidSomething == False:
+                    DidSomething = True # this is a edgecase
+                if not SHUTUP:
+                    #print("Building "+file.filename+" for "+region)
+                    print(file.BuildDef)
+                    process = subprocess.Popen(file.BuildDef, stdin=PIPE, stdout=PIPE, text=True)
+                    outputTuple = process.communicate()
 
-                if len(outputTuple[0]) > 0:
-                    print(outputTuple[0])
-                    print("Configured to exit here...")
-                    exit()
+                    if len(outputTuple[0]) > 0:
+                        print(outputTuple[0])
+                        print("Configured to exit here...")
+                        exit()
 
         # yea this is evil
         if file != "a file. totally":
